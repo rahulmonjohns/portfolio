@@ -77,8 +77,8 @@
 							<h1 class="text-uppercase"></h1>
 							<h5 class="text-uppercase">Drupal developer</h5>
 							<div class="d-flex align-items-center">
-								<a class="primary_btn" href="https://www.linkedin.com/in/rahulmon-johnson" target="_blank"><span>Hire Me</span></a>
-								<a class="primary_btn tr-bg" href="/portfolio/rahul_resume.pdf" target="_blank"><span>Get CV</span></a>
+								<a class="primary_btn" href="https://www.linkedin.com/in/rahulmon-johnson" target="_blank"><span>LinkedIn</span></a>
+								<a class="primary_btn tr-bg" href="/portfolio/rahul_resume.pdf" target="_blank"><span>Download Resume</span></a>
 							</div>
 						</div>
 					</div>
@@ -111,10 +111,25 @@
 						<p>
 							My name is Rahulmon Johnson, and I’m currently working as a Drupal developer.
 						</p>
-						<p>
-							I have 4+ years of experience working with Drupal 8, 9. I have a master degree in Computer Appication.
-						</p>
-						<a class="primary_btn" href="/portfolio/rahul_resume.pdf" target="_blank"><span>Download CV</span></a>
+						<p id="experience"></p>
+
+<script>
+  const joinDate = new Date('2018-02-01');
+  const today = new Date();
+  
+  let years = today.getFullYear() - joinDate.getFullYear();
+  const m = today.getMonth() - joinDate.getMonth();
+
+  // Adjust if the current month/day is before the join month/day
+  if (m < 0 || (m === 0 && today.getDate() < joinDate.getDate())) {
+    years--;
+  }
+
+  document.getElementById("experience").innerHTML =
+    `I have ${years}+ years of experience working with Drupal 8, 9. I have a master's degree in Computer Application.`;
+</script>
+						
+						<a class="primary_btn" href="/portfolio/rahul_resume.pdf" target="_blank"><span>Download Resume</span></a>
 
 					</div>
 				</div>
@@ -623,3 +638,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
+
