@@ -212,21 +212,23 @@
 				<div class="offset-lg-2 col-lg-4 col-md-6"  id="experience">
 					<div class="client-info">
 						<div class="d-flex mb-50">
-							<span class="lage" id="exp-big"></span>
+	<span class="lage" id="exp-big"></span>
 
 <script>
-  const joinDate = new Date('2018-02-01');
-  const today = new Date();
-  
-  let years = today.getFullYear() - joinDate.getFullYear();
-  const m = today.getMonth() - joinDate.getMonth();
+  (function() {
+    const joinDate = new Date('2018-02-01');
+    const today = new Date();
 
-  // Adjust if the current month/day is before the join month/day
-  if (m < 0 || (m === 0 && today.getDate() < joinDate.getDate())) {
-    years--;
-  }
+    let years = today.getFullYear() - joinDate.getFullYear();
+    const monthDiff = today.getMonth() - joinDate.getMonth();
 
-document.getElementById("exp-big").textContent = years;
+    // Adjust year count if today is before the join date's month/day
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < joinDate.getDate())) {
+      years--;
+    }
+
+    document.getElementById("exp-big").textContent = years;
+  })();
 </script>
 							<span class="smll">Years Experience Working</span>
 						</div>
@@ -653,6 +655,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
+
 
 
 
